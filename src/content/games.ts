@@ -1,0 +1,48 @@
+export const GAME_COPY = {
+  replay: "Main Lagi",
+  startAriaLabel: (title: string) => `Mulai ${title}`,
+  replayAriaLabel: (title: string) => `Mainkan ${title} lagi`,
+  coffeeBeans: {
+    start: "Gas!",
+    canvasLabel: "Area permainan. Geser satu jari ke kiri atau kanan untuk menggerakkan keranjang.",
+    cupLabel: "Isi cangkir kopi",
+    beanCaughtAnnouncement: "Biji kopi tertangkap",
+    reward: "Abil dapat Capucino",
+    stickerLabel: "Sticker cangkir cappuccino lucu",
+  },
+  hamsterPop: {
+    start: "Mulai!",
+    progressLabel: "Sapaan untuk hamster",
+    appearedAnnouncement: "Hamster nongol dari lubang.",
+    hitAnnouncement: "Kena! Hamsternya malah senang dicolek.",
+    successAnnouncement: "Selesai! Kasihan hamsternya… tapi lucu sih.",
+    stickerCaption: "Sakit Kak Abil, kamu harus tanggung jawab, aku gak ada asuransi soalnya.",
+    stickerLabel: "Sticker hamster benjol dengan palu kartun dan ekspresi kesakitan lucu",
+    holeAriaLabel: (index: number, occupied: boolean) =>
+      `Lubang ${index}, ${occupied ? "ada hamster" : "kosong"}`,
+  },
+  cardMatch: {
+    start: "Ayo!",
+    previewAnnouncement: "Ingat posisi semua kartu sebentar, ya.",
+    matchAnnouncement: "Cocok! Mereka senang ketemu.",
+    mismatchAnnouncement: "Hampir! Coba lagi, pelan-pelan aja.",
+    completeAnnouncement: "Semua pasangan ketemu! Kamu jago banget.",
+    stickerCaption: "Wahh Kak Abil, memory-nya kuat ya! Iyalah, kan dia ingat aku semenjak di Arten, hahaha.",
+    stickerLabel: "Sticker red panda berkacamata sedang fokus mengingat kartu",
+    cardGroupLabel: "Kartu teman-teman hewan",
+    cardBackLabel: "tertutup",
+    cardAriaLabel: (
+      index: number,
+      animalName: string | null,
+      matched: boolean,
+      closedLabel: string,
+    ) => `Kartu ${index}, ${animalName ?? closedLabel}${matched ? ", sudah cocok" : ""}`,
+    animals: {
+      cat: "kucing oren",
+      hamster: "hamster",
+      rabbit: "kelinci",
+      fox: "rubah",
+      redPanda: "red panda",
+    },
+  },
+} as const;

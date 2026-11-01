@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" rx="48" fill="#1F3A2B"/>
+  <circle cx="1030" cy="110" r="6" fill="#FFF8E7" opacity=".9"/>
+  <circle cx="920" cy="78" r="4" fill="#FFF8E7" opacity=".7"/>
+  <circle cx="1100" cy="220" r="4" fill="#FFF8E7" opacity=".75"/>
+  <circle cx="770" cy="115" r="5" fill="#FFF8E7" opacity=".8"/>
+  <path d="M0 440c170-77 303-80 465-28 158 51 296 37 438-19 128-50 207-38 297-2v239H0V440Z" fill="#244A38"/>
+  <path d="M0 523c174-45 319-50 482-12 201 47 376 15 518-29 79-25 143-24 200-7v155H0V523Z" fill="#12281D"/>
+  <rect x="84" y="102" width="650" height="376" rx="44" fill="#FFF8E7"/>
+  <text x="132" y="220" fill="#4A2F1E" font-family="Baloo 2, ui-rounded, system-ui, sans-serif" font-size="45" font-weight="800">Buka disaat jam istirahat</text>
+  <text x="132" y="282" fill="#4A2F1E" font-family="Baloo 2, ui-rounded, system-ui, sans-serif" font-size="45" font-weight="800">saja atau pulang kerja ya</text>
+  <text x="132" y="364" fill="#4E7A2A" font-family="Baloo 2, ui-rounded, system-ui, sans-serif" font-size="32" font-weight="700">Scroll pelan-pelan ya</text>
+  <path d="M917 88a65 65 0 1 0 0 130 51 51 0 0 1 0-130Z" fill="#FFC94A"/>
+  <g transform="translate(785 253)">
+    <ellipse cx="136" cy="217" rx="132" ry="104" fill="#F59A3C"/>
+    <path d="m46 115-15-99 80 55m115 44 15-99-80 55" fill="#F59A3C"/>
+    <ellipse cx="136" cy="144" rx="112" ry="95" fill="#FFC884"/>
+    <ellipse cx="93" cy="151" rx="17" ry="22" fill="#2B1A2E"/>
+    <ellipse cx="179" cy="151" rx="17" ry="22" fill="#2B1A2E"/>
+    <circle cx="87" cy="143" r="6" fill="#FFF"/>
+    <circle cx="173" cy="143" r="6" fill="#FFF"/>
+    <ellipse cx="136" cy="180" rx="14" ry="10" fill="#F8B4C0"/>
+    <path d="M130 187q6 8 12 0" stroke="#4A2F1E" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="55" cy="183" r="15" fill="#F8B4C0" opacity=".8"/>
+    <circle cx="217" cy="183" r="15" fill="#F8B4C0" opacity=".8"/>
+  </g>
+  <path d="M1050 385c-20-18-41-7-41 12 0 17 41 44 41 44s41-27 41-44c0-19-21-30-41-12Z" fill="#F8B4C0"/>
+</svg>
