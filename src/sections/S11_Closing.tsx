@@ -4,6 +4,7 @@ import { SoundManager, type SoundId } from '@/audio/SoundManager';
 import { CLOSING_ANIMAL_LABELS, CLOSING_BUTTON, CLOSING_FAREWELL_MESSAGE, CLOSING_GROUP_LABEL, CLOSING_HINT, CLOSING_MESSAGE, CLOSING_MOON_LABEL, SECRET_ROOM_LOCKED_MESSAGE, SECRET_ROOM_LOCKED_TITLE } from '@/content/closing';
 import { hide, say } from '@/core/bubbles';
 import { useInView } from '@/core/hooks/useInView';
+import { useReducedMotion } from '@/core/hooks/useReducedMotion';
 import { useAppStore } from '@/store/useAppStore';
 import { Cat } from '@/components/characters/Cat';
 import { Fox } from '@/components/characters/Fox';
@@ -66,6 +67,7 @@ export function S11_Closing({ content }: SectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const choirTimer = useRef<number | null>(null);
   const active = useInView(sectionRef, 0.1);
+  const reducedMotion = useReducedMotion();
   const secretRoomUnlocked = useAppStore((state) =>
     REQUIRED_GAME_IDS.every((gameId) => state.gameResults[gameId] === 'success'),
   );
@@ -240,7 +242,7 @@ export function S11_Closing({ content }: SectionProps) {
       />
       {giftBloomActive && (
         <SecretGiftBloom
-          reducedMotion={perfMode === 'low'}
+          reducedMotion={reducedMotion}
           onClose={() => {
             closeGiftBloom();
             hide();

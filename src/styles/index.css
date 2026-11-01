@@ -1313,30 +1313,9 @@ html[data-perf="low"] .wheel-stage .hamster .head,
 html[data-perf="low"] .wheel-stage .hamster .ear-l,
 html[data-perf="low"] .wheel-stage .hamster .ear-r,
 html[data-perf="low"] .wheel-stage .hamster .nose,
-html[data-perf="low"] .rabbit-stage .rabbit .head,
-html[data-perf="low"] .rabbit-stage .rabbit .ear-l,
-html[data-perf="low"] .rabbit-stage .rabbit .ear-r,
-html[data-perf="low"] .fox-stage[data-state="rest"] .fox-body,
-html[data-perf="low"] .fox-stage[data-state="rest"] .bush,
-html[data-perf="low"] .fox-stage .bush-leaf,
-html[data-perf="low"] .fox-svg[data-expr="curious"] .eye-r,
 html[data-perf="low"] .panda .head {
   animation: none;
 }
-html[data-perf="low"] .wheel-stage .hamster[data-puffed="true"] .head {
-  animation: hamsterPop 0.4s ease-out both;
-}
-html[data-perf="low"] .fox-stage[data-state="jump"] .fox-body {
-  animation-duration: 0.55s;
-}
-html[data-perf="low"] .fox-stage[data-state="shake"] .bush,
-html[data-perf="low"] .fox-stage[data-state="shake"] .fox-body,
-html[data-perf="low"] .rabbit-sibling,
-html[data-perf="low"] .pat-arm g,
-html[data-perf="low"] .panda[data-roll="true"] .panda-roll {
-  animation-duration: 0.4s;
-}
-
 /* Penutup: hewan bisa disentuh, animasi idle berhenti saat section tidak terlihat. */
 #closing .closing-moon {
   padding: 0;
@@ -1440,10 +1419,6 @@ html[data-perf="low"] .panda[data-roll="true"] .panda-roll {
 #closing[data-active="false"] .closing-animal svg * {
   animation-play-state: paused !important;
 }
-html[data-perf="low"] #closing .closing-animal svg * {
-  animation: none !important;
-}
-
 /* Tanah rerumputan menjadi alas tetap untuk grid 3 x 3 game hamster. */
 .hamster-ground {
   box-sizing: border-box;

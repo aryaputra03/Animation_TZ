@@ -43,12 +43,12 @@ export default function App() {
     return () => window.clearTimeout(id);
   }, [started]);
 
-  // Ukur FPS 2 detik setelah mulai; jika di bawah 45, pindah ke mode hemat.
+  // Gunakan sampel lebih panjang dan ambang lebih rendah agar animasi awal tidak memicu mode hemat palsu.
   useEffect(() => {
     if (!started || useAppStore.getState().perfMode === 'low') return;
     let alive = true;
-    void measureFps(2000).then((fps) => {
-      if (alive && fps < 45) setPerfMode('low');
+    void measureFps(4000).then((fps) => {
+      if (alive && fps < 32) setPerfMode('low');
     });
     return () => {
       alive = false;

@@ -236,11 +236,11 @@ Mengatur kapan {catName} berbicara agar tidak ramai.
 - `prefers-reduced-motion: reduce`,
 - `navigator.hardwareConcurrency <= 4`,
 - `navigator.deviceMemory <= 2` (jika tersedia),
-- **Pengukuran FPS**: rata-rata di bawah sekitar 45 fps selama 2 detik pertama setelah mulai (pakai `requestAnimationFrame`). Jika turun, ubah ke `low` dan tidak kembali ke `normal` dalam sesi yang sama.
+- **Pengukuran FPS**: rata-rata di bawah 32 fps selama 4 detik setelah mulai (pakai `requestAnimationFrame`). Jika turun, ubah ke `low` dan tidak kembali ke `normal` dalam sesi yang sama.
 
 Efek `low` (lihat juga `02` bagian 8):
 - matikan parallax dan partikel berlebih,
-- gerak idle diganti kedipan sederhana,
+- gerak idle dekoratif dikurangi; gerakan utama kelinci dan rubah serta animasi interaksi tetap berjalan,
 - transisi latar halus diganti perpindahan antar-section,
 - batasi partikel game dan animasi menang,
 - matikan getar HP.
