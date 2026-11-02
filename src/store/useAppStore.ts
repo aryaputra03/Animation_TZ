@@ -4,7 +4,7 @@ import type { SectionId } from '@/content/sections';
 import { DEFAULT_CAT_NAME } from '@/content/system';
 import { unlockScroll } from '@/core/scrollLock';
 import { detectInitialPerfMode, type PerfMode } from '@/core/performance';
-import type { GameId, GameResult } from '@/games/types';
+import { REQUIRED_GAME_IDS, type GameId, type GameResult } from '@/games/types';
 import { loadMuted, loadStoredCatName, saveCatName, saveMuted, sanitizeCatName } from './storage';
 
 export interface BubbleState {
@@ -31,7 +31,6 @@ interface AppState {
   setPerfMode: (mode: PerfMode) => void;
   setActiveSection: (id: SectionId) => void;
   setActiveGameId: (id: GameId | null) => void;
-  unlockGiftBloom: () => void;
   openGiftBloom: () => void;
   closeGiftBloom: () => void;
   setBubble: (bubble: BubbleState | null) => void;
@@ -73,8 +72,6 @@ export const useAppStore = create<AppState>((set) => ({
 
   setActiveGameId: (activeGameId) => set({ activeGameId }),
 
-  unlockGiftBloom: () => set({ giftBloomUnlocked: true, giftBloomActive: true }),
-
   openGiftBloom: () =>
     set((state) => state.giftBloomUnlocked ? { giftBloomActive: true } : {}),
 
@@ -82,5 +79,11 @@ export const useAppStore = create<AppState>((set) => ({
 
   setBubble: (bubble) => set({ bubble }),
   setGameResult: (id, result) =>
-    set((state) => ({ gameResults: { ...state.gameResults, [id]: result } })),
+    set((state) => {
+      const gameResults = { ...state.gameResults, [id]: result };
+      const giftBloomUnlocked = state.giftBloomUnlocked ||
+        REQUIRED_GAME_IDS.every((gameId) => gameResults[gameId] === 'success');
+
+      return { gameResults, giftBloomUnlocked };
+    }),
 }));

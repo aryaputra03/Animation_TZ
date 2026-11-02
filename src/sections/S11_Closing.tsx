@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { m, useAnimationControls } from 'framer-motion';
 import { SoundManager, type SoundId } from '@/audio/SoundManager';
-import { CLOSING_ANIMAL_LABELS, CLOSING_BUTTON, CLOSING_FAREWELL_MESSAGE, CLOSING_GROUP_LABEL, CLOSING_HINT, CLOSING_MESSAGE, CLOSING_MOON_LABEL, SECRET_ROOM_LOCKED_MESSAGE, SECRET_ROOM_LOCKED_TITLE } from '@/content/closing';
+import { CLOSING_ANIMAL_LABELS, CLOSING_BUTTON, CLOSING_FAREWELL_MESSAGE, CLOSING_GROUP_LABEL, CLOSING_MESSAGE, CLOSING_MOON_LABEL, SECRET_ROOM_LOCKED_MESSAGE, SECRET_ROOM_LOCKED_TITLE } from '@/content/closing';
 import { hide, say } from '@/core/bubbles';
 import { useInView } from '@/core/hooks/useInView';
 import { useReducedMotion } from '@/core/hooks/useReducedMotion';
@@ -13,7 +13,6 @@ import { Rabbit } from '@/components/characters/Rabbit';
 import { RedPanda } from '@/components/characters/RedPanda';
 import { REQUIRED_GAME_IDS } from '@/games/types';
 import { SecretGiftBloom } from './SecretGiftBloom';
-import { SecretGiftDialog } from './SecretGiftDialog';
 import type { SectionProps } from './types';
 
 const CHOIR: readonly { sound: SoundId; delay: number; pitch: number }[] = [
@@ -74,12 +73,11 @@ export function S11_Closing({ content }: SectionProps) {
   const perfMode = useAppStore((state) => state.perfMode);
   const catName = useAppStore((state) => state.catName);
   const giftBloomActive = useAppStore((state) => state.giftBloomActive);
-  const unlockGiftBloom = useAppStore((state) => state.unlockGiftBloom);
+  const openGiftBloom = useAppStore((state) => state.openGiftBloom);
   const closeGiftBloom = useAppStore((state) => state.closeGiftBloom);
   const [singing, setSinging] = useState(false);
   const [singingKey, setSingingKey] = useState(0);
   const [farewellShown, setFarewellShown] = useState(false);
-  const [giftDialogOpen, setGiftDialogOpen] = useState(false);
 
   const sayFarewell = () => setFarewellShown(true);
 
@@ -219,27 +217,17 @@ export function S11_Closing({ content }: SectionProps) {
       <div className="z-10 mt-1 flex w-full max-w-[22rem] flex-col items-center gap-2">
         <m.button
           type="button"
-          aria-describedby="closing-action-hint"
           whileTap={{ y: 3, scale: 0.98 }}
           onClick={() => {
             hide();
-            setGiftDialogOpen(true);
+            openGiftBloom();
           }}
           className="btn-matcha flex min-h-14 w-full items-center justify-center px-6 text-lg font-extrabold focus-visible:outline-offset-4"
         >
           {CLOSING_BUTTON}
         </m.button>
-        <p id="closing-action-hint" className="card-cream px-3 py-1 text-sm font-semibold">{CLOSING_HINT}</p>
       </div>
 
-      <SecretGiftDialog
-        isOpen={giftDialogOpen}
-        onClose={() => setGiftDialogOpen(false)}
-        onSolved={() => {
-          setGiftDialogOpen(false);
-          unlockGiftBloom();
-        }}
-      />
       {giftBloomActive && (
         <SecretGiftBloom
           reducedMotion={reducedMotion}

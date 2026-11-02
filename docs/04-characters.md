@@ -2,8 +2,6 @@
 
 Spesifikasi lima hewan halaman: **kucing oren, hamster, kelinci, rubah, red panda**. Semuanya digambar sebagai **SVG inline** (komponen React), bergaya bulat, imut, dan simpel seperti stiker. Warna dan outline mengikuti `02-design-system.md`. Teks dan pemicu balon ada di `03-sections-and-copy.md`, suara di `06-sound-design.md`.
 
-Pengecualian khusus: satu sticker primata SVG yang fokus mengerjakan soal programming boleh tampil hanya di popup Special Gift S11. Primata ini bukan karakter baru di alur halaman dan tidak memiliki interaksi atau suara sendiri.
-
 ## 1. Aturan umum untuk semua karakter
 
 ### Gaya

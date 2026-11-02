@@ -37,8 +37,8 @@ Pemilik proyek. **Namanya tidak ditampilkan di mana pun** di halaman, metadata, 
 2. Dia mengetuk tombol mulai, sekaligus mengaktifkan suara, dan boleh memberi nama kucing oren.
 3. Dia scroll. Tiap beberapa layar muncul hewan berbeda dengan animasi dan suara khas.
 4. Hewan-hewan itu bisa diketuk dan bereaksi.
-5. Di tiga titik, muncul minigame yang mudah. Pengguna bebas melewati intro dan memilih kapan bermain, tetapi harus memenangkan ketiganya untuk membuka ruang rahasia di S11.
-6. Setelah semua game dimenangkan, ruang rahasia menampilkan penutup: semua hewan berkumpul di malam berbintang, menyampaikan salam perpisahan, dan menampilkan pesan terima kasih serta tombol Special Gift.
+5. Di tiga titik, muncul minigame yang mudah. Pengguna bebas melewati intro dan memilih kapan bermain, tetapi harus memenangkan ketiganya untuk membuka penutup S11 dan tombol animasi bunga.
+6. Setelah semua game dimenangkan, penutup menampilkan semua hewan berkumpul di malam berbintang, menyampaikan salam perpisahan, dan menampilkan pesan terima kasih serta tombol animasi bunga.
 
 Kucing oren menemani sepanjang halaman lewat balon chat yang berkomentar receh.
 
@@ -53,11 +53,11 @@ Kucing oren menemani sepanjang halaman lewat balon chat yang berkomentar receh.
 - 3 minigame
 - Latar yang berubah dari pagi sampai malam berbintang sepanjang scroll
 - Indikator progres berupa jejak kaki di tepi layar
-- Tombol Special Gift di penutup, tanpa tautan eksternal
+- Tombol animasi bunga di bagian akhir setelah ketiga game dimenangkan
 
 **Kenyamanan**
 - Tombol mute di pojok kanan atas
-- Ruang rahasia S11 baru terbuka setelah ketiga game dimenangkan
+- Penutup S11 dan tombol animasi bunga baru terbuka setelah ketiga game dimenangkan
 - Mode hemat animasi (otomatis untuk perangkat lemah atau `prefers-reduced-motion`)
 - Tampilan terkunci portrait dengan pesan lucu saat diputar ke landscape
 
@@ -96,9 +96,9 @@ Detail ada di `03-sections-and-copy.md`.
 
 - Pesan: **"Terimakasih bil sudah eksplorasi di Website Landing Page yang masih banyak kurangnya ini."**
 - Setiap karakter di ending bisa diketuk untuk mengucapkan salam perpisahan dan berterima kasih sudah bermain.
-- Tombol: **"Special Gift (Ruang Rahasia)"**
-- Keterangan: **"Membuka ruang tersebut membutuhkan pemahaman programming thinking."** Tombol tidak membuka WhatsApp atau tautan eksternal.
-- Tombol membuka popup soal JavaScript dengan kode yang bisa disalin, kolom jawaban (jawaban yang diterima: `0001`), dan sticker primata lucu yang fokus mengerjakan soal.
+- Tombol: **"Lihat animasi bunga"**
+- Tombol langsung membuka animasi taman bunga. Tidak ada kuis, popup soal, atau tautan eksternal.
+- Setelah animasi ditutup, tombol replay tersedia di S2 tanpa menghapus progres game.
 
 ## 10. Metadata
 
@@ -120,7 +120,7 @@ Detail ada di `03-sections-and-copy.md`.
 
 ## 12. Batasan konten
 
-- Hewan halaman: kucing oren, hamster, kelinci, rubah, red panda. Sticker primata hanya boleh muncul di popup soal programming S11.
+- Hewan halaman: kucing oren, hamster, kelinci, rubah, red panda.
 - **Tanpa reptil, serangga, atau hewan yang menjijikkan.**
 - Tidak ada teks yang menekan atau membuatnya merasa bersalah jika tidak membalas.
 - Pesan penutup menggunakan teks yang ditentukan pemilik proyek.
@@ -137,7 +137,7 @@ Detail ada di `03-sections-and-copy.md`.
 - Terasa mulus dan lucu dari awal sampai akhir di HP Android sungguhan.
 - Tidak ada momen yang membingungkan, membosankan, atau membuatnya frustrasi.
 - Setiap hewan punya momen "aww" sendiri.
-- Tombol Special Gift menampilkan keterangan programming thinking dan tidak membuka tautan eksternal.
+- Tombol animasi bunga tersedia setelah ketiga game dimenangkan dan membuka taman bunga secara langsung.
 - Tidak ada pelanggaran terhadap bagian 11 dan 12.
 
 ## 15. Hal yang masih terbuka

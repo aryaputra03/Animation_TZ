@@ -1337,81 +1337,11 @@ html[data-perf="low"] .panda .head {
   content: "";
   transform: translateX(-50%);
 }
-.secret-gift-dialog {
-  width: min(36rem, calc(100vw - 2rem));
-  max-width: none;
-  max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 2rem);
-  margin: auto;
-  overflow-y: auto;
-  border: 0;
-  border-radius: 1.5rem;
-  padding: 1.25rem;
-  background: var(--color-cream-50);
-  color: var(--color-coffee-800);
-  box-shadow: 0 12px 32px rgba(31, 58, 43, 0.32);
-  overscroll-behavior: contain;
-}
-.secret-gift-dialog::backdrop {
-  background: rgba(31, 58, 43, 0.76);
-}
 .secret-gift-bloom {
   background:
     radial-gradient(ellipse at 50% 40%, rgba(137, 38, 53, 0.2), transparent 45%),
     radial-gradient(ellipse at 50% 100%, rgba(20, 76, 61, 0.16), transparent 58%),
     linear-gradient(180deg, #0c0810 0%, #130a15 48%, #07090c 100%);
-}
-.secret-gift-code {
-  border: 1px solid rgba(174, 213, 129, 0.28);
-  background: #14291f;
-  color: #f1f8e9;
-  -webkit-user-select: text;
-  user-select: text;
-  overscroll-behavior: contain;
-  tab-size: 2;
-  scrollbar-color: #7cb342 #1f3a2b;
-}
-.secret-gift-code::selection,
-.secret-gift-code *::selection {
-  background: #4e7a2a;
-  color: #fff8e7;
-}
-.secret-gift-code::-webkit-scrollbar-track {
-  background: #1f3a2b;
-}
-.secret-gift-code::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #aed581, #4e7a2a);
-  background-clip: padding-box;
-}
-.secret-gift-code .syntax-comment {
-  color: #8fae91;
-  font-style: italic;
-}
-.secret-gift-code .syntax-string {
-  color: #b9e58b;
-}
-.secret-gift-code .syntax-number {
-  color: #ffb86c;
-}
-.secret-gift-code .syntax-keyword {
-  color: #d2a6ff;
-}
-.secret-gift-code .syntax-builtin {
-  color: #91bdff;
-}
-.secret-gift-code .syntax-method {
-  color: #79d4c3;
-}
-.secret-gift-code .syntax-operator {
-  color: #f1a6c2;
-}
-.secret-gift-code .syntax-punctuation {
-  color: #d9e5d4;
-}
-.secret-gift-dialog [data-correct="true"] {
-  color: var(--color-matcha-700);
-}
-.secret-gift-dialog [data-correct="false"] {
-  color: var(--color-coffee-800);
 }
 #closing .closing-animal svg {
   max-width: 100%;

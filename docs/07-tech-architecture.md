@@ -48,7 +48,7 @@ project-root/
     │   ├── sections.ts
     │   ├── bubbles.ts
     │   ├── system.ts
-    │   └── closing.ts          # teks pesan, salam perpisahan, dan Special Gift
+     │   └── closing.ts          # teks pesan, salam perpisahan, dan tombol animasi bunga
     ├── store/
     │   ├── useAppStore.ts      # Zustand
     │   └── storage.ts          # localStorage aman (catName, muted)
@@ -105,7 +105,7 @@ Aturan struktur:
    - `Preloader` memudar, lalu dilepas dari DOM.
 4. `ScrollDirector` mengambil alih: mengamati section, mengatur latar, memicu balon chat.
 5. Section game mengunci scroll hanya saat `playing` (lihat `05`).
-6. Penutup (S11) menampilkan pesan, salam perpisahan yang dapat dipicu dengan mengetuk setiap hewan, dan tombol Special Gift tanpa tautan eksternal.
+ 6. Penutup (S11) menampilkan pesan, salam perpisahan yang dapat dipicu dengan mengetuk setiap hewan, dan tombol animasi bunga setelah ketiga game dimenangkan.
 
 ## 4. State global (Zustand)
 
@@ -350,7 +350,7 @@ Aturan hook:
 - `vercel.json` opsional untuk cache: `/assets/*` dan `/fonts/*` memakai `Cache-Control: public, max-age=31536000, immutable`.
 - Setelah deploy: perbarui URL absolut `og:image`, cek pratinjau link, lalu buat QR.
 - **QR code:** buat dari URL produksi (nama subdomain yang singkat dan lucu lebih mudah). Tingkat koreksi galat minimal **M**, ukuran cetak minimal sekitar 3 x 3 cm, kontras tinggi (gelap di atas terang), dan **uji pindai** dengan HP Android sungguhan sebelum dicetak.
-- Uji tombol Special Gift pada versi produksi; pastikan keterangannya tampil dan tidak ada navigasi eksternal.
+- Uji syarat kemenangan tiga game untuk tombol animasi bunga dan replay S2 pada versi produksi.
 
 ## 18. Daftar periksa arsitektur
 
