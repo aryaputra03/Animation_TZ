@@ -27,7 +27,7 @@ Urutan halaman dan **seluruh teks yang tampil**. Semua teks dikumpulkan di `src/
 | S8 | Rubah | Rubah | Ketuk semak atau rubah | tidak |
 | S9 | Red panda | Red panda | Ketuk | tidak |
 | S10 | Game 3: cocokkan kartu | Semua hewan | Ketuk kartu | **ya** |
-| S11 | Penutup | Semua hewan | Ketuk hewan dan bulan, tombol animasi bunga setelah game menang | tidak |
+| S11 | Penutup | Semua hewan | Ketuk hewan dan bulan, tombol animasi bunga | tidak |
 
 Latar berubah dari pagi ke malam sepanjang S2 sampai S11 (lihat `02-design-system.md`, bagian 3).
 
@@ -231,16 +231,16 @@ Latar berubah dari pagi ke malam sepanjang S2 sampai S11 (lihat `02-design-syste
 
 **Tujuan:** momen akhir yang hangat, berisi pesan terima kasih, salam perpisahan dari hewan, dan tombol animasi bunga.
 
-S11 adalah ruang rahasia. Sebelum ketiga game berstatus menang, tampilkan panel terkunci dengan judul `Ruang rahasia masih terkunci` dan teks `Menangkan ketiga game dulu ya. Kamu bebas main kapan saja, lalu balik lagi ke sini!`. Setelah ketiganya menang, tampilkan isi penutup di bawah ini.
+S11 dapat dibuka kapan saja dan tidak bergantung pada hasil tiga game. Tampilkan isi penutup langsung saat pengguna scroll ke bagian ini.
 
 **Visual:** malam berbintang, bulan sabit besar di atas, semua hewan (kucing oren, hamster, kelinci, rubah, red panda) berkumpul di padang rumput, duduk melingkar atau berjejer. Kunang-kunang kecil melayang.
 
 **Teks tampil:**
 - Judul: `Terima kasih sudah scroll sampai sini 🌙`
 - Pesan utama: `Terimakasih bil sudah eksplorasi di Website Landing Page yang masih banyak kurangnya ini.`
-- Tombol aksi setelah ketiga game dimenangkan: `Lihat animasi bunga`
+- Tombol aksi: `Lihat animasi bunga`
 
-**Animasi bunga:** tombol di bagian akhir hanya tersedia setelah ketiga game dimenangkan dan langsung membuka taman tanpa kuis atau popup. Batang tumbuh langsung dari bawah layar tanpa tahap benih/kecambah. Daun teal berlapis tersambung ke batang melalui tangkai, rumput hijau ramping, dan lima bunga jingga mekar di atas latar malam burgundy. Batang dan dedaunan bergoyang lembut tertiup angin; banyak kelopak tersebar melayang mendatar dari kiri ke kanan di depan dan belakang taman. Taman tampil minimal 10 detik, lalu tombol X muncul di pojok kanan atas dan membawa pengguna ke halaman awal tanpa reload atau menghapus progres game. Tombol `Lihat animasi bunga lagi` di S2 juga hanya tersedia setelah ketiga game dimenangkan dan membuka animasi dari awal. Dalam mode hemat gerak, taman langsung mekar tetapi tetap menunggu 10 detik dan tombol X.
+**Animasi bunga:** tombol di bagian akhir selalu tersedia dan langsung membuka taman tanpa kuis atau popup. Batang tumbuh langsung dari bawah layar tanpa tahap benih/kecambah. Daun teal berlapis tersambung ke batang melalui tangkai, rumput hijau ramping, dan lima bunga jingga mekar di atas latar malam burgundy. Batang dan dedaunan bergoyang lembut tertiup angin; banyak kelopak tersebar melayang mendatar dari kiri ke kanan di depan dan belakang taman. Taman tampil minimal 10 detik, lalu tombol X muncul di pojok kanan atas dan membawa pengguna ke halaman awal tanpa reload atau menghapus progres game. Tombol `Lihat animasi bunga lagi` di S2 tersedia setelah animasi pertama kali dibuka dan tidak bergantung pada hasil game. Dalam mode hemat gerak, taman langsung mekar tetapi tetap menunggu 10 detik dan tombol X.
 
 **Balon chat:**
 - Menjelang penutup (di akhir S10 menuju S11): `Tinggal sedikit lagi, aku udah gak sabar.`
@@ -250,7 +250,7 @@ S11 adalah ruang rahasia. Sebelum ketiga game berstatus menang, tampilkan panel 
 **Interaksi:**
 - **Ketuk hewan:** masing-masing bereaksi dan bersuara khasnya, lalu menampilkan balon chat tepat di atas karakter: `Dadah, Kak Abil! Makasih sudah main bareng kami!`.
 - **Ketuk bulan (easter egg):** semua hewan "bernyanyi" bersamaan, yaitu rangkaian suara semua hewan dengan nada naik-turun lucu dan hati beterbangan, sekitar 3 detik, lalu kembali tenang. Balon: `Konser malam dimulai! 🎶`
-- **Ketuk tombol:** tombol langsung membuka animasi bunga. Tombol hanya tampil setelah ketiga game dimenangkan.
+- **Ketuk tombol:** tombol langsung membuka animasi bunga kapan saja.
 
 ---
 
@@ -313,7 +313,7 @@ Aturan:
 - [ ] Tidak ada teks yang menekan atau menuntut balasan
 - [ ] Pesan penutup menampilkan teks yang diberikan pemilik proyek
 - [ ] Semua hewan di S11 menampilkan salam perpisahan saat diketuk
-- [ ] Tombol animasi bunga di bagian akhir dan tombol replay S2 hanya tersedia setelah ketiga game dimenangkan
+- [ ] Tombol animasi bunga di bagian akhir selalu tersedia; replay S2 muncul setelah taman pernah dibuka
 - [ ] Sticker primata hanya muncul di popup, bukan sebagai karakter baru di alur halaman
 - [ ] Setiap section punya minimal satu balon chat dan satu interaksi ketukan
 - [ ] Balon tidak menutupi hewan atau area game

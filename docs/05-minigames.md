@@ -237,7 +237,7 @@ src/features/games/
 
 **Umum**
 - [ ] Intro setiap game bisa dilewati dengan scroll; game yang dimulai harus diselesaikan
-- [ ] S11 tetap terkunci sampai ketiga game berstatus sukses
+- [ ] S11 dan tombol animasi bunga dapat diakses tanpa bergantung pada hasil game
 - [ ] Tidak ada kondisi kalah, skor, poin, atau level; sticker hadiah hanya muncul setelah menang di game terkait
 - [ ] Game selesai dalam 30 sampai 60 detik, dan batas waktu lunak berfungsi
 - [ ] Scroll terkunci hanya saat `playing`, dan terbuka kembali setelahnya

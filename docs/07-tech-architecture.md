@@ -105,7 +105,7 @@ Aturan struktur:
    - `Preloader` memudar, lalu dilepas dari DOM.
 4. `ScrollDirector` mengambil alih: mengamati section, mengatur latar, memicu balon chat.
 5. Section game mengunci scroll hanya saat `playing` (lihat `05`).
- 6. Penutup (S11) menampilkan pesan, salam perpisahan yang dapat dipicu dengan mengetuk setiap hewan, dan tombol animasi bunga setelah ketiga game dimenangkan.
+ 6. Penutup (S11) menampilkan pesan, salam perpisahan yang dapat dipicu dengan mengetuk setiap hewan, dan tombol animasi bunga yang bisa dibuka tanpa syarat game.
 
 ## 4. State global (Zustand)
 
@@ -143,7 +143,7 @@ interface AppState {
 Aturan:
 - Pakai **selector** (`useAppStore(s => s.xxx)`) agar komponen tidak ter-render ulang berlebihan.
 - `scrollProgress` **jangan** dipakai untuk merender ulang React setiap frame. Nilai progres untuk animasi latar dan parallax dikelola langsung oleh GSAP (tanpa state React). Simpan ke store hanya dengan frekuensi rendah (misalnya saat melewati ambang tertentu) atau untuk indikator yang di-*throttle*.
-- Ruang rahasia S11 hanya dibuka jika seluruh `gameResults` untuk `coffee-beans`, `hamster-pop`, dan `card-match` bernilai `success`.
+- Ruang rahasia S11 dan animasi bunga tidak bergantung pada `gameResults`; ketiga game tetap dapat dimainkan kapan saja.
 - Jangan menaruh objek besar atau fungsi sinkron berat di store.
 
 ## 5. Penyimpanan (`storage.ts`)
@@ -350,7 +350,7 @@ Aturan hook:
 - `vercel.json` opsional untuk cache: `/assets/*` dan `/fonts/*` memakai `Cache-Control: public, max-age=31536000, immutable`.
 - Setelah deploy: perbarui URL absolut `og:image`, cek pratinjau link, lalu buat QR.
 - **QR code:** buat dari URL produksi (nama subdomain yang singkat dan lucu lebih mudah). Tingkat koreksi galat minimal **M**, ukuran cetak minimal sekitar 3 x 3 cm, kontras tinggi (gelap di atas terang), dan **uji pindai** dengan HP Android sungguhan sebelum dicetak.
-- Uji syarat kemenangan tiga game untuk tombol animasi bunga dan replay S2 pada versi produksi.
+- Uji tombol animasi bunga di S11 tanpa memainkan game; replay S2 muncul setelah animasi pertama dibuka.
 
 ## 18. Daftar periksa arsitektur
 

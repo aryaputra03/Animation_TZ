@@ -8,7 +8,7 @@ import type { SectionProps } from './types';
 
 /** S2: kucing oren mengintip dari dalam cangkir kopi. */
 export function S02_Hero({ content }: SectionProps) {
-  const giftBloomUnlocked = useAppStore((state) => state.giftBloomUnlocked);
+  const giftBloomSeen = useAppStore((state) => state.giftBloomSeen);
   const openGiftBloom = useAppStore((state) => state.openGiftBloom);
 
   return (
@@ -23,7 +23,7 @@ export function S02_Hero({ content }: SectionProps) {
           {content.title}
         </h1>
         <p className="mt-1 text-lg font-semibold text-coffee-800/80">{content.subtitle}</p>
-        {giftBloomUnlocked && (
+        {giftBloomSeen && (
           <button
             type="button"
             className="btn-matcha mt-3 flex min-h-12 w-full items-center justify-center rounded-full px-4 text-base font-extrabold focus-visible:outline-offset-2"

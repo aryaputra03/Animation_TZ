@@ -37,8 +37,8 @@ Pemilik proyek. **Namanya tidak ditampilkan di mana pun** di halaman, metadata, 
 2. Dia mengetuk tombol mulai, sekaligus mengaktifkan suara, dan boleh memberi nama kucing oren.
 3. Dia scroll. Tiap beberapa layar muncul hewan berbeda dengan animasi dan suara khas.
 4. Hewan-hewan itu bisa diketuk dan bereaksi.
-5. Di tiga titik, muncul minigame yang mudah. Pengguna bebas melewati intro dan memilih kapan bermain, tetapi harus memenangkan ketiganya untuk membuka penutup S11 dan tombol animasi bunga.
-6. Setelah semua game dimenangkan, penutup menampilkan semua hewan berkumpul di malam berbintang, menyampaikan salam perpisahan, dan menampilkan pesan terima kasih serta tombol animasi bunga.
+5. Di tiga titik, muncul minigame yang mudah. Pengguna bebas melewati intro dan memilih kapan bermain; game tidak menjadi syarat untuk membuka penutup atau animasi bunga.
+6. Penutup dapat dibuka kapan saja dengan scroll, menampilkan semua hewan berkumpul di malam berbintang, salam perpisahan, pesan terima kasih, dan tombol animasi bunga.
 
 Kucing oren menemani sepanjang halaman lewat balon chat yang berkomentar receh.
 
@@ -53,11 +53,11 @@ Kucing oren menemani sepanjang halaman lewat balon chat yang berkomentar receh.
 - 3 minigame
 - Latar yang berubah dari pagi sampai malam berbintang sepanjang scroll
 - Indikator progres berupa jejak kaki di tepi layar
-- Tombol animasi bunga di bagian akhir setelah ketiga game dimenangkan
+- Tombol animasi bunga di bagian akhir tanpa syarat kemenangan game
 
 **Kenyamanan**
 - Tombol mute di pojok kanan atas
-- Penutup S11 dan tombol animasi bunga baru terbuka setelah ketiga game dimenangkan
+- Penutup S11 dan tombol animasi bunga dapat dibuka kapan saja tanpa syarat kemenangan game
 - Mode hemat animasi (otomatis untuk perangkat lemah atau `prefers-reduced-motion`)
 - Tampilan terkunci portrait dengan pesan lucu saat diputar ke landscape
 
@@ -74,7 +74,7 @@ Kucing oren menemani sepanjang halaman lewat balon chat yang berkomentar receh.
 | 2 | Ketuk hamster | Hamster muncul dari lubang, ketuk untuk menyapanya |
 | 3 | Cocokkan kartu hewan | 6 kartu (3 pasang) bergambar hewan |
 
-Semua game: **mudah banget**, satu jari, tanpa kalah dan tanpa skor. Intro game boleh dilewati dengan scroll dan pemain dapat kembali kapan saja, tetapi ketiga game harus dimenangkan untuk membuka S11. Detail ada di `05-minigames.md`.
+Semua game: **mudah banget**, satu jari, tanpa kalah dan tanpa skor. Intro game boleh dilewati dengan scroll dan pemain dapat kembali kapan saja. S11 serta animasi bunga selalu dapat diakses tanpa harus menang game. Detail ada di `05-minigames.md`.
 
 ## 8. Alur halaman (garis besar)
 
@@ -97,8 +97,8 @@ Detail ada di `03-sections-and-copy.md`.
 - Pesan: **"Terimakasih bil sudah eksplorasi di Website Landing Page yang masih banyak kurangnya ini."**
 - Setiap karakter di ending bisa diketuk untuk mengucapkan salam perpisahan dan berterima kasih sudah bermain.
 - Tombol: **"Lihat animasi bunga"**
-- Tombol langsung membuka animasi taman bunga. Tidak ada kuis, popup soal, atau tautan eksternal.
-- Setelah animasi ditutup, tombol replay tersedia di S2 tanpa menghapus progres game.
+- Tombol langsung membuka animasi taman bunga. Tidak ada kuis, popup soal, syarat game, atau tautan eksternal.
+- Setelah animasi dibuka sekali, tombol replay tersedia di S2 tanpa menghapus progres game.
 
 ## 10. Metadata
 
@@ -137,7 +137,7 @@ Detail ada di `03-sections-and-copy.md`.
 - Terasa mulus dan lucu dari awal sampai akhir di HP Android sungguhan.
 - Tidak ada momen yang membingungkan, membosankan, atau membuatnya frustrasi.
 - Setiap hewan punya momen "aww" sendiri.
-- Tombol animasi bunga tersedia setelah ketiga game dimenangkan dan membuka taman bunga secara langsung.
+- Tombol animasi bunga selalu tersedia di penutup dan membuka taman bunga secara langsung.
 - Tidak ada pelanggaran terhadap bagian 11 dan 12.
 
 ## 15. Hal yang masih terbuka

@@ -66,13 +66,13 @@ Jangan menambah dependency **runtime** di luar tabel ini tanpa meminta persetuju
 - **Layar pembuka tanpa nama penerima.** Jangan menulis "Untuk Abil" di sana.
 - **Layar pembuka (S1) adalah overlay `Preloader`**, bukan section yang digulir. Section yang digulir dimulai dari S2 (Hero) sampai S11 (Penutup). Jangan membuat dua layar pembuka.
 - **Hewan yang dipakai:** kucing oren, hamster, kelinci, rubah, red panda. **Tanpa primata, reptil, serangga, atau hewan yang menjijikkan.**
-- **Game wajib dimenangkan untuk membuka ruang rahasia S11.** Jangan sediakan tombol Lewati di game. Pengguna boleh menggulir melewati intro game dan bermain kapan saja; jika game dimulai, soft cap menyelesaikannya dengan sukses. S11 tetap terkunci sampai ketiga game berstatus sukses.
+- **Game tidak wajib dimenangkan untuk membuka penutup S11 atau animasi bunga.** Jangan sediakan tombol Lewati di game. Pengguna bebas menggulir dan memilih kapan ingin bermain.
 - **Tanpa skor, poin, atau level.** Saat menang di game biji kopi, tampilkan sticker cappuccino lucu dengan teks **"Abil dapat Capucino"**. Saat menang di game hamster, tampilkan sticker hamster benjol dengan palu kartun, ekspresi kesakitan lucu, dan teks **"Sakit Kak Abil, kamu harus tanggung jawab, aku gak ada asuransi soalnya."** Saat menang di game kartu, tampilkan sticker red panda jenius yang mengingat kartu dengan teks **"Wahh Kak Abil, memory-nya kuat ya! Iyalah, kan dia ingat aku semenjak di Arten, hahaha."** Jangan menambah hadiah game lain.
 - **Tanpa musik latar.** Suara hanya muncul sebagai reaksi saat pengguna mengetuk atau berinteraksi.
 - **Tanpa pelacakan:** tanpa analytics, cookie, atau skrip pihak ketiga.
 - **Pesan penutup:** `Terimakasih bil sudah eksplorasi di Website Landing Page yang masih banyak kurangnya ini.`
 - **Bahasa teks di halaman:** Indonesia, santai, dominan receh.
-- **Penutup S11:** setiap karakter bisa diketuk untuk menampilkan balon salam perpisahan tepat di atas karakter dan berterima kasih karena sudah diajak bermain. Setelah ketiga game dimenangkan, tampilkan tombol **"Lihat animasi bunga"** di bagian akhir. Tombol langsung membuka animasi taman bunga; tidak ada kuis, popup soal, atau tautan eksternal. Tombol X kembali ke halaman awal tanpa reload dan tanpa menghapus progres game. Tombol replay di S2 juga hanya tersedia setelah ketiga game dimenangkan.
+- **Penutup S11:** setiap karakter bisa diketuk untuk menampilkan balon salam perpisahan tepat di atas karakter dan berterima kasih karena sudah diajak bermain. Tampilkan tombol **"Lihat animasi bunga"** tanpa syarat kemenangan game. Tombol langsung membuka animasi taman bunga; tidak ada kuis, popup soal, atau tautan eksternal. Tombol X kembali ke halaman awal tanpa reload dan tanpa menghapus progres game. Tombol replay di S2 muncul setelah animasi bunga pernah dibuka, tanpa syarat kemenangan game.
 - **Judul tab dan pratinjau link:**
   - Judul: `Buka disaat jam istirahat saja atau pulang kerja ya 🐾`
   - Deskripsi: `Scroll pelan-pelan ya`
@@ -154,7 +154,7 @@ Jika skrip di atas belum ada di `package.json`, tambahkan.
 - Menambah analytics, cookie, atau skrip pihak ketiga
 - Menambah skor, poin, atau level
 - Menambah hadiah game selain sticker cappuccino, hamster, dan red panda yang ditentukan untuk kemenangan masing-masing game
-- Menambah tombol Lewati pada game atau membuka ruang rahasia sebelum ketiga game dimenangkan
+- Menambah tombol Lewati pada game
 - Menambah musik latar
 - Menaruh nama pengirim di halaman
 - Memakai hewan reptil atau yang menjijikkan

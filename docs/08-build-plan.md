@@ -11,7 +11,7 @@ Agar tidak ada ambiguitas saat membangun:
 1. **Layar pembuka (S1) diimplementasikan sebagai overlay `Preloader`**, bukan section yang digulir. Section yang digulir dimulai dari **S2 (Hero)** sampai **S11 (Penutup)**. Hapus `S01_Intro` dari registry di `07-tech-architecture.md` bagian 6, dan jangan membuat dua layar pembuka.
 2. **Satu halaman, tanpa router.**
 3. **Teks hanya di `src/content/`**; pesan penutup, salam perpisahan hewan, dan teks tombol animasi bunga ada di `closing.ts`.
-4. Pesan penutup memakai teks yang diberikan pemilik proyek. Tombol animasi bunga hanya terbuka setelah ketiga game dimenangkan dan tidak menampilkan kuis atau tautan eksternal.
+4. Pesan penutup memakai teks yang diberikan pemilik proyek. Tombol animasi bunga selalu tersedia di S11 dan tidak menampilkan kuis atau tautan eksternal.
 5. Gunakan `<meta name="color-scheme" content="light">` dan `color-scheme: light` di CSS (supaya mode gelap paksa Chrome Android tidak membalik warna).
 6. **Arah visual final:** palet hijau dengan latar empat pemandangan (lihat blok pembaruan di `02-design-system.md`).
 7. **Status:** Tahap 1 sampai 3 dan implementasi Tahap 4a sampai 4c sudah dikerjakan. Seluruh minigame menunggu uji di Chrome Android.
@@ -134,7 +134,7 @@ Ukuran usaha (relatif): **S** kecil, **M** sedang, **L** besar.
 
 ## Tahap 4: Tiga minigame (L)
 
-**Tujuan:** tiga game yang mudah dan nyaman di HP. Pengguna boleh menunda dengan scroll, tetapi harus memenangkan semuanya untuk membuka ruang rahasia S11. **Kerjakan satu per satu (4a, 4b, 4c) dan uji di HP setiap selesai.**
+**Tujuan:** tiga game yang mudah dan nyaman di HP. Pengguna bebas memilih kapan bermain; S11 dan animasi bunga dapat dibuka tanpa menyelesaikan game. **Kerjakan satu per satu (4a, 4b, 4c) dan uji di HP setiap selesai.**
 
 **Pekerjaan umum (4a, kerjakan pertama):**
 - [ ] `GameShell` + `useGameShell` (state `intro/playing/success`, kunci scroll, batas waktu lunak, jeda saat tab tersembunyi atau di luar layar)
@@ -166,12 +166,12 @@ Ukuran usaha (relatif): **S** kecil, **M** sedang, **L** besar.
 - Intro game bisa dilewati dengan scroll dan pemain dapat kembali kapan saja; game yang dimulai **tidak bisa kalah**
 - Game selesai dalam 30 sampai 60 detik; batas waktu lunak menyelesaikan dengan senang
 - Scroll terkunci hanya saat `playing`; selalu terbuka lagi setelah menang
-- Ruang rahasia S11 terkunci sampai ketiga game dimenangkan
+- S11 dan tombol animasi bunga dapat diakses tanpa bergantung pada kemenangan game
 - Tidak ada skor, poin, atau level; sticker kemenangan hanya muncul setelah menang di game terkait
 - Tidak ada kebocoran `setTimeout`, listener, atau loop yang berjalan di luar layar
 - Satu jari cukup, tanpa konflik dengan scroll vertikal sebelum Mulai
 
-**Cara uji:** scroll melewati intro dan kembali untuk bermain, mainkan tiap game sampai selesai, biarkan sampai batas waktu lunak, pastikan S11 terkunci sebelum tiga kemenangan dan terbuka sesudahnya, scroll setelah selesai, pindah tab saat bermain, hemat daya aktif.
+**Cara uji:** scroll melewati intro dan kembali untuk bermain, buka S11 sebelum memainkan game, mainkan tiap game sampai selesai, biarkan sampai batas waktu lunak, scroll setelah selesai, pindah tab saat bermain, hemat daya aktif.
 
 **Contoh perintah Codex:**
 > Kerjakan **Tahap 4a** saja: `GameShell` dan Game 1 (tangkap biji kopi) sesuai `05-minigames.md`. Setelah selesai dan lolos, berhenti. Aku akan uji di HP sebelum lanjut ke 4b.
@@ -185,7 +185,7 @@ Ukuran usaha (relatif): **S** kecil, **M** sedang, **L** besar.
 **Pekerjaan:**
 - [ ] **S11 Penutup:** malam berbintang, bulan sabit, kunang-kunang, semua hewan berkumpul
 - [ ] Bintang dan bulan muncul setelah ±80% scroll
-- [ ] Tombol **"Lihat animasi bunga"** langsung membuka taman bunga setelah ketiga game dimenangkan
+- [ ] Tombol **"Lihat animasi bunga"** langsung membuka taman bunga tanpa syarat hasil game
 - [ ] Pesan penutup menampilkan teks dari pemilik proyek di `closing.ts`
 - [ ] Semua hewan di penutup bisa diketuk untuk mengucapkan salam perpisahan dan terima kasih
 - [ ] Easter egg bulan: `closing.choir` (semua hewan "bernyanyi" ±3 detik)
@@ -196,7 +196,7 @@ Ukuran usaha (relatif): **S** kecil, **M** sedang, **L** besar.
 - [ ] Penyetelan angka game di `config.ts` berdasarkan uji di HP
 
 **Kriteria selesai:**
-- Tombol animasi bunga dan replay S2 hanya tersedia setelah ketiga game dimenangkan; keduanya langsung membuka taman malam dengan lima bunga jingga dan kelopak yang tertiup angin mendatar dari kiri ke kanan. Setelah 10 detik tombol X membawa ke halaman awal tanpa mereset progres game; tidak ada kuis atau navigasi eksternal
+- Tombol animasi bunga di S11 langsung membuka taman malam dengan lima bunga jingga dan kelopak yang tertiup angin mendatar dari kiri ke kanan tanpa syarat game. Setelah 10 detik tombol X membawa ke halaman awal tanpa mereset progres game; replay S2 tersedia setelah animasi pertama dibuka; tidak ada kuis atau navigasi eksternal
 - Bulan diketuk → paduan suara berjalan tanpa pecah atau menumpuk; di-mute tetap menampilkan animasi tanpa suara
 - Seluruh alur dari awal sampai akhir sekitar 3 sampai 5 menit
 - Tidak ada pelanggaran daftar larangan di `AGENTS.md` bagian 9
@@ -220,7 +220,7 @@ Ukuran usaha (relatif): **S** kecil, **M** sedang, **L** besar.
 - [ ] Buat QR code dari URL produksi (koreksi galat minimal M, ukuran cetak minimal ±3 x 3 cm, kontras tinggi)
 - [ ] **Uji pindai QR dengan HP Android** sebelum dicetak
 - [ ] Pastikan pesan penutup dan salam perpisahan tampil di S11
-- [ ] Menangkan ketiga game lalu pastikan tombol bunga di S11 dan replay S2 tampil; cek taman mekar, tombol X kembali ke halaman awal setelah minimal 10 detik tanpa menghapus progres game, dan komposisi tidak terpotong di beberapa ukuran portrait
+- [ ] Buka tombol bunga di S11 tanpa memainkan game; cek taman mekar, tombol X kembali ke halaman awal setelah minimal 10 detik tanpa menghapus progres game, lalu replay S2 tampil; cek komposisi di beberapa ukuran portrait
 - [ ] Cek privasi: tanpa analytics, cookie, skrip, atau font pihak ketiga; hanya `catName` dan `muted` di `localStorage`
 
 **Kriteria selesai:** seluruh daftar periksa rilis (bagian 10) tercentang.
@@ -256,9 +256,9 @@ Alat bantu: `npm run dev` (jaringan lokal), `chrome://inspect` untuk debug lewat
 - [ ] Judul tab: "Buka disaat jam istirahat saja atau pulang kerja ya 🐾"; deskripsi: "Scroll pelan-pelan ya"
 
 **Fungsi**
-- [ ] Tombol animasi bunga terkunci sebelum ketiga game dimenangkan dan langsung membuka taman sesudahnya
+- [ ] S11 dan tombol animasi bunga selalu tersedia tanpa menyelesaikan game
 - [ ] Nama kucing: ketikan Abil dipakai; kosong menjadi **Oyen**
-- [ ] Tiga game bisa dimainkan kapan saja; S11 hanya terbuka setelah ketiganya dimenangkan
+- [ ] Tiga game bisa dimainkan kapan saja dan S11 selalu dapat diakses tanpa menyelesaikan game
 - [ ] Easter egg berfungsi (lebay, kopi tumpah, paduan suara bulan)
 - [ ] Mute berfungsi dan tersimpan; tidak ada suara sebelum ketukan pertama
 - [ ] Landscape menampilkan pesan lucu
@@ -300,7 +300,7 @@ Jika performa atau jadwal bermasalah, **pangkas dari atas ke bawah** sampai cuku
 5. Animasi menang yang rumit (cukup teks dan hati sederhana)
 6. Kucing tidur saat diam
 
-**Jangan dipangkas:** layar pembuka dan aktivasi suara, tombol mute, kunci ruang rahasia dan syarat menang tiga game untuk tombol bunga, mode hemat animasi, penjaga landscape.
+**Jangan dipangkas:** layar pembuka dan aktivasi suara, tombol mute, akses bebas ke ruang rahasia dan tombol bunga, mode hemat animasi, penjaga landscape.
 
 ## 13. Hal yang harus diisi atau diputuskan pemilik proyek
 

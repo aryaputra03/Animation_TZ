@@ -1,7 +1,5 @@
 /** Teks penutup, salam perpisahan, dan aksi ruang hadiah. */
 export const CLOSING_MESSAGE = 'Terimakasih bil sudah eksplorasi di Website Landing Page yang masih banyak kurangnya ini.';
-export const SECRET_ROOM_LOCKED_TITLE = 'Ruang rahasia masih terkunci';
-export const SECRET_ROOM_LOCKED_MESSAGE = 'Menangkan ketiga game dulu ya. Kamu bebas main kapan saja, lalu balik lagi ke sini!';
 
 export const CLOSING_BUTTON = 'Lihat animasi bunga';
 export const CLOSING_FAREWELL_MESSAGE = 'Dadah, Kak Abil! Makasih sudah main bareng kami!';

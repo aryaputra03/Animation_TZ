@@ -1,6 +1,6 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 import type { SectionId } from '@/content/sections';
-import { enterSection, hide } from '@/core/bubbles';
+import { enterSection } from '@/core/bubbles';
 import { ScrollTrigger } from '@/core/gsap';
 import { useAppStore } from '@/store/useAppStore';
 
@@ -28,8 +28,7 @@ export function ScrollDirector({ children }: { children: ReactNode }) {
           const id = (entry.target as HTMLElement).dataset.section as SectionId | undefined;
           if (id) {
             setActiveSection(id);
-            if ((entry.target as HTMLElement).dataset.secretRoomLocked === 'true') hide();
-            else enterSection(id);
+            enterSection(id);
           }
         }
       },

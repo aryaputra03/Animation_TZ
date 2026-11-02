@@ -111,7 +111,7 @@ Skala ukuran (untuk lebar HP):
 - Bentuk pil, latar `matcha-500`, teks `cream-50`, outline `forest-900` 3px.
 - Tinggi minimal **56px** (target sentuh nyaman).
 - Efek tekan: turun 3px dan bayangan mengecil (dalam `transform`).
-- Tombol aksi penutup ("Lihat animasi bunga") adalah satu-satunya tombol besar berwarna paling mencolok di halaman dan baru tampil setelah ketiga game dimenangkan.
+- Tombol aksi penutup ("Lihat animasi bunga") adalah satu-satunya tombol besar berwarna paling mencolok di halaman dan selalu bisa diakses.
 
 ### Tombol kecil (Mute)
 - Target sentuh minimal **48 x 48 px** meski ikonnya lebih kecil.
@@ -205,8 +205,8 @@ Aktif otomatis jika `prefers-reduced-motion: reduce` **atau** perangkat dinilai 
 
 - Kontras teks terhadap latar minimal **4.5:1** di setiap tahap latar.
 - Semua tombol punya `aria-label` yang jelas (terutama mute dan tombol animasi bunga).
-- Tombol di bagian akhir hanya tersedia setelah ketiga game dimenangkan dan langsung membuka animasi bunga tanpa popup atau kuis.
-- Batang tanaman tumbuh langsung dari bawah layar tanpa tahap benih/kecambah, lalu daun teal berlapis dengan tangkai yang tersambung ke batang, rumput hijau tipis, dan lima bunga jingga mekar bertahap di latar malam burgundy. Batang, daun, rumput, dan bunga bergoyang lembut; banyak kelopak tersebar bergerak mendatar dari kiri ke kanan di depan dan belakang taman, bersama titik cahaya kecil. Gerak memakai `transform` dan `opacity`. SVG mempertahankan rasio aspek dan mengecil agar seluruh komposisi tidak terpotong pada ukuran layar portrait berbeda. Taman tampil minimal 10 detik; setelah itu tombol X muncul di pojok kanan atas dan membawa pengguna kembali ke halaman awal tanpa reload atau menghapus progres game. Tombol replay tersedia di S2 setelah ketiga game dimenangkan. Mode hemat gerak langsung menampilkan taman mekar, dengan aturan tunggu dan tombol X yang sama.
+- Tombol di bagian akhir selalu tersedia dan langsung membuka animasi bunga tanpa popup atau kuis.
+- Batang tanaman tumbuh langsung dari bawah layar tanpa tahap benih/kecambah, lalu daun teal berlapis dengan tangkai yang tersambung ke batang, rumput hijau tipis, dan lima bunga jingga mekar bertahap di latar malam burgundy. Batang, daun, rumput, dan bunga bergoyang lembut; banyak kelopak tersebar bergerak mendatar dari kiri ke kanan di depan dan belakang taman, bersama titik cahaya kecil. Gerak memakai `transform` dan `opacity`. SVG mempertahankan rasio aspek dan mengecil agar seluruh komposisi tidak terpotong pada ukuran layar portrait berbeda. Taman tampil minimal 10 detik; setelah itu tombol X muncul di pojok kanan atas dan membawa pengguna kembali ke halaman awal tanpa reload atau menghapus progres game. Tombol replay tersedia di S2 setelah animasi pertama kali dibuka, tanpa syarat kemenangan game. Mode hemat gerak langsung menampilkan taman mekar, dengan aturan tunggu dan tombol X yang sama.
 - Elemen dekoratif diberi `aria-hidden="true"`.
 - Hewan yang bisa diketuk adalah `<button>` (bukan `div`), dengan `aria-label` seperti "Elus Oyen".
 - Fokus keyboard terlihat jelas, meski penggunaan utama adalah sentuhan.

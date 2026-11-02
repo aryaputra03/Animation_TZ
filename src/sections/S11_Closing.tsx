@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { m, useAnimationControls } from 'framer-motion';
 import { SoundManager, type SoundId } from '@/audio/SoundManager';
-import { CLOSING_ANIMAL_LABELS, CLOSING_BUTTON, CLOSING_FAREWELL_MESSAGE, CLOSING_GROUP_LABEL, CLOSING_MESSAGE, CLOSING_MOON_LABEL, SECRET_ROOM_LOCKED_MESSAGE, SECRET_ROOM_LOCKED_TITLE } from '@/content/closing';
+import { CLOSING_ANIMAL_LABELS, CLOSING_BUTTON, CLOSING_FAREWELL_MESSAGE, CLOSING_GROUP_LABEL, CLOSING_MESSAGE, CLOSING_MOON_LABEL } from '@/content/closing';
 import { hide, say } from '@/core/bubbles';
 import { useInView } from '@/core/hooks/useInView';
 import { useReducedMotion } from '@/core/hooks/useReducedMotion';
@@ -11,7 +11,6 @@ import { Fox } from '@/components/characters/Fox';
 import { Hamster } from '@/components/characters/Hamster';
 import { Rabbit } from '@/components/characters/Rabbit';
 import { RedPanda } from '@/components/characters/RedPanda';
-import { REQUIRED_GAME_IDS } from '@/games/types';
 import { SecretGiftBloom } from './SecretGiftBloom';
 import type { SectionProps } from './types';
 
@@ -67,9 +66,6 @@ export function S11_Closing({ content }: SectionProps) {
   const choirTimer = useRef<number | null>(null);
   const active = useInView(sectionRef, 0.1);
   const reducedMotion = useReducedMotion();
-  const secretRoomUnlocked = useAppStore((state) =>
-    REQUIRED_GAME_IDS.every((gameId) => state.gameResults[gameId] === 'success'),
-  );
   const perfMode = useAppStore((state) => state.perfMode);
   const catName = useAppStore((state) => state.catName);
   const giftBloomActive = useAppStore((state) => state.giftBloomActive);
@@ -102,35 +98,6 @@ export function S11_Closing({ content }: SectionProps) {
   };
 
   const particleCount = perfMode === 'low' ? 3 : 8;
-
-  if (!secretRoomUnlocked) {
-    return (
-      <section
-        ref={sectionRef}
-        id={content.id}
-        data-section={content.id}
-        data-active={active}
-        data-secret-room-locked="true"
-        aria-labelledby="closing-title"
-        className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden px-5 py-24 text-center"
-      >
-        <div className="card-cream z-10 flex w-full max-w-[24rem] flex-col items-center gap-4 px-6 py-8">
-          <svg viewBox="0 0 64 64" aria-hidden="true" className="h-14 w-14">
-            <rect x="12" y="27" width="40" height="31" rx="8" fill="var(--color-matcha-300)" stroke="var(--color-coffee-800)" strokeWidth="4" />
-            <path d="M21 27v-8a11 11 0 0 1 22 0v8" fill="none" stroke="var(--color-coffee-800)" strokeWidth="5" strokeLinecap="round" />
-            <circle cx="32" cy="41" r="4" fill="var(--color-coffee-800)" />
-            <path d="M32 45v6" stroke="var(--color-coffee-800)" strokeWidth="4" strokeLinecap="round" />
-          </svg>
-          <h2 id="closing-title" className="text-[clamp(1.65rem,7.4vw,2.1rem)] leading-tight font-extrabold text-balance">
-            {SECRET_ROOM_LOCKED_TITLE}
-          </h2>
-          <p className="max-w-[20rem] text-lg leading-snug font-semibold text-coffee-800/80">
-            {SECRET_ROOM_LOCKED_MESSAGE}
-          </p>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section
